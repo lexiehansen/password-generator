@@ -62,7 +62,7 @@ function generatePassword() {
        passwordInfo = passwordInfo.concat(specialCharacters)
      }
 
-     console.log("List of variables to be randomized: " + passwordInfo)
+     console.log("List of variables chosen to be randomized: " + passwordInfo)
 
      //generating password
      var generatedPassword = ""
