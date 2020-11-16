@@ -20,10 +20,12 @@ function generatePassword() {
   //password length pop up
   var passwordLength = (prompt("How long would you like your password to be? Enter a numerical value between 8 and 128."));
     
+  console.log("Selected password length is " + passwordLength)
+
   if (passwordLength <= 7 || passwordLength >= 129) {
       alert("You must choose a value between 8 and 128. Please try again.")
     }
-    
+
     else {
       //choose info pop ups
       confirmUppercase = confirm("Click OK if you would like to use uppercase letters.")
@@ -41,7 +43,7 @@ function generatePassword() {
         }
     }
 
-    //generating password info
+    //generating password info with concatenates
     var passwordInfo = []
 
      if (confirmUppercase) {
@@ -60,12 +62,17 @@ function generatePassword() {
        passwordInfo = passwordInfo.concat(specialCharacters)
      }
 
+     console.log("List of variables to be randomized: " + passwordInfo)
+
      //generating password
      var generatedPassword = ""
 
      for (i=0; i<passwordLength; i++) {
       generatedPassword = generatedPassword + passwordInfo[Math.floor(Math.random() * passwordInfo.length)]
     }
+
+    console.log("Randomly generated password is " + generatedPassword)
+
     return generatedPassword;
 };
 
