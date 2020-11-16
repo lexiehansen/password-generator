@@ -17,8 +17,6 @@ var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+"];
 
-var password = [];
-
 
 //generate function
 function generatePassword() {
@@ -42,6 +40,22 @@ function generatePassword() {
       confirmSpecialCharacters = confirm("Click OK if you would like to use special characters.")
     }
 
+    //generating password info
+    var passwordInfo = []
+     if (confirmUppercase === true) {
+       passwordInfo = passwordInfo.concat(uppercase)
+     }
+     if (confirmLowercase === true) {
+       passwordInfo = passwordInfo.concat(lowercase)
+     }
+     if (confirmNumbers === true) {
+       passwordInfo = passwordInfo.concat(numbers)
+     }
+     if (confirmSpecialCharacters === true) {
+       passwordInfo = passwordInfo.concat(specialCharacters)
+     }
+
+     var generatedPassword = ""
 
 };
 // Get references to the #generate element
